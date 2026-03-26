@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, monospace;
+
+  --color-bg: #0A0A0A;
+  --color-ink: #FAFAFA;
+  --color-accent: #FACC15;
+  --color-accent-light: #FEF08A;
+  --color-muted: #171717;
+  --color-surface: #121212;
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-ink font-sans selection:bg-accent selection:text-bg;
+    color-scheme: dark;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-bg;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted rounded-full border border-bg hover:bg-neutral-700 transition-colors;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+.glass {
+  @apply bg-surface/90 backdrop-blur-md border border-white/5 shadow-sm;
+}
+
+.glass-dark {
+  @apply bg-bg/95 backdrop-blur-xl border border-white/5;
+}
+
+.text-gradient {
+  @apply text-accent;
+}
+
+.neon-glow {
+  @apply border border-accent/50 shadow-[0_0_15px_rgba(250,204,21,0.15)];
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
