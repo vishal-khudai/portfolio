@@ -17,7 +17,7 @@ export function Hero() {
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           className="absolute top-[10%] left-[5%] w-64 h-80 glass rounded-2xl overflow-hidden shadow-xl hidden lg:block opacity-40 hover:opacity-100 transition-opacity"
         >
-          <img src="https://picsum.photos/seed/art1/400/600" alt="Game Art" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+          <img src="https://play-lh.googleusercontent.com/BTxW1F_ZMAgKN47e2wTZW--h6_OwgiVNS0yKP2N3oRWSu-fvzUQozidaI2Z7gAOcxfdFgF0WRNQevFEIyVhHqw" alt="Merge HomeTown" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
         </motion.div>
 
         <motion.div
@@ -25,7 +25,7 @@ export function Hero() {
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
           className="absolute bottom-[10%] left-[10%] w-72 h-56 glass rounded-2xl overflow-hidden shadow-xl hidden lg:block opacity-30 hover:opacity-100 transition-opacity"
         >
-          <img src="https://picsum.photos/seed/art2/600/400" alt="Game Art" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+          <img src="https://play-lh.googleusercontent.com/nz4cBSiLfZK_gndFVvh6TP_Oda_SXd6fBBgpCnhctOWW6gesfU2qtsxP5Zv3flAw3S0T1ABhwa1G8YnaUEJu" alt="Call of Legends" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
         </motion.div>
 
         <motion.div
@@ -33,7 +33,7 @@ export function Hero() {
           transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
           className="absolute top-[15%] right-[5%] w-80 h-60 glass rounded-2xl overflow-hidden shadow-xl hidden lg:block opacity-40 hover:opacity-100 transition-opacity"
         >
-          <img src="https://picsum.photos/seed/art3/600/400" alt="Game Art" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+          <img src="https://play-lh.googleusercontent.com/-FrcJNYIXaoMIMZaFEEBUoYyIIgH8RceoMIiXg1zWDuWJWG-g9gC3_JYy_VldTj_Og" alt="Tales & Dragons" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
         </motion.div>
 
         <motion.div
@@ -41,7 +41,7 @@ export function Hero() {
           transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
           className="absolute bottom-[15%] right-[8%] w-56 h-72 glass rounded-2xl overflow-hidden shadow-xl hidden lg:block opacity-30 hover:opacity-100 transition-opacity"
         >
-          <img src="https://picsum.photos/seed/art4/400/600" alt="Game Art" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+          <img src="https://play-lh.googleusercontent.com/jnAdtgmG3F-HmhNmZnboA6HOqZKnyfa8T1Dxf1_lgworr5JEjR-NRWu1mq8JzWIDr5U" alt="Merge Fever" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
         </motion.div>
       </div>
 
