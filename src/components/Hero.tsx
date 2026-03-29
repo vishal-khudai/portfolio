@@ -95,7 +95,7 @@ export function Hero() {
           </a>
           <a
             href="https://drive.google.com/uc?export=download&id=1QJIh-hRWU6A6aTlogyBje6COFJj-EPRR"
-            className="px-8 py-4 rounded-full text-lg font-semibold text-white glass hover:bg-white/10 transition-all flex items-center gap-2"
+            className="px-8 py-4 rounded-full text-lg font-semibold text-white border border-white/20 bg-white/10 backdrop-blur-sm hover:bg-white/20 hover:border-accent/50 hover:shadow-[0_0_20px_rgba(250,204,21,0.2)] transition-all flex items-center gap-2 shadow-lg"
           >
             Download Resume
           </a>
