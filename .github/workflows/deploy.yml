@@ -1,6 +1,6 @@
 name: Deploy Vite App to GitHub Pages
 
-on:
+'on':
   push:
     branches:
       - main
