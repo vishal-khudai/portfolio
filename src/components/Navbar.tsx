@@ -49,13 +49,6 @@ export function Navbar() {
               {link.name}
             </a>
           ))}
-          <div className="w-px h-4 bg-white/10 mx-2" />
-          <a
-            href="#contact"
-            className="bg-accent hover:bg-accent-light text-bg px-5 py-2 rounded-full text-sm font-bold transition-all hover:scale-105 active:scale-95"
-          >
-            Start a Project
-          </a>
         </div>
 
         {/* Mobile Toggle */}
@@ -86,13 +79,6 @@ export function Navbar() {
                 {link.name}
               </a>
             ))}
-            <a
-              href="#contact"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="bg-accent text-bg px-5 py-3 rounded-xl text-center font-bold"
-            >
-              Start a Project
-            </a>
           </motion.div>
         )}
       </AnimatePresence>
