@@ -1,12 +1,25 @@
 import { motion } from "motion/react";
 
 const ARTWORKS = [
-  { id: 1, title: "Fantasy Landscape", src: "https://picsum.photos/seed/art1/800/600" },
-  { id: 2, title: "Character Concept", src: "https://picsum.photos/seed/art2/600/800" },
-  { id: 3, title: "Sci-Fi Environment", src: "https://picsum.photos/seed/art3/800/800" },
-  { id: 4, title: "Weapon Design", src: "https://picsum.photos/seed/art4/800/600" },
-  { id: 5, title: "Creature Concept", src: "https://picsum.photos/seed/art5/600/800" },
-  { id: 6, title: "UI Elements", src: "https://picsum.photos/seed/art6/800/800" },
+  { id: 1, src: "https://drive.google.com/uc?export=view&id=1yHBCzwFgh0YV0xgXSZbUKL8GVYhtoj1c" },
+  { id: 2, src: "https://drive.google.com/uc?export=view&id=1B8y197hGo_LJcJp-0mSEuWpTvTqq0Yru" },
+  { id: 3, src: "https://drive.google.com/uc?export=view&id=1SnKpDuZtMR4qo_A2cEZyju6jBz5RNVsg" },
+  { id: 4, src: "https://drive.google.com/uc?export=view&id=1nWparle7udiWNgJ-ljz2hZQVdyLktHzu" },
+  { id: 5, src: "https://drive.google.com/uc?export=view&id=1-Ftv9Yf-sHJmmHjypG-LRREdwyxew1dw" },
+  { id: 6, src: "https://drive.google.com/uc?export=view&id=1HGgfa6edtU3HAfEC4aZpAqYiI1dHtMIT" },
+  { id: 7, src: "https://drive.google.com/uc?export=view&id=1gSHeb-U4qkmmQ8dKGy2cjm5RsJQgKtYC" },
+  { id: 8, src: "https://drive.google.com/uc?export=view&id=1MXMTU3-kHoW47auWvWYbNr4xN96iKyTI" },
+  { id: 9, src: "https://drive.google.com/uc?export=view&id=1qMRSqNTlGMZkc6TxZ-41v4LdsyY-IrNC" },
+  { id: 10, src: "https://drive.google.com/uc?export=view&id=1ZhFftHm3tg07sNx_a_aKfIe0AXel_QrY" },
+  { id: 11, src: "https://drive.google.com/uc?export=view&id=14AZ37JPTEmnEXvBY9J8NOylI1p3ECGxm" },
+  { id: 12, src: "https://drive.google.com/uc?export=view&id=1WEIczLDjrBGeQp8Yac85BVSfA15OO_xP" },
+  { id: 13, src: "https://drive.google.com/uc?export=view&id=1wiT-ZObrqX1HNKrW4Jo1jMcB7_XXm37A" },
+  { id: 14, src: "https://drive.google.com/uc?export=view&id=1a2Qnfzc3h9fiBptMcvYAx9brshmIes5d" },
+  { id: 15, src: "https://drive.google.com/uc?export=view&id=167OlBYEAHowgiihYLRX5Df4x1ShagEdk" },
+  { id: 16, src: "https://drive.google.com/uc?export=view&id=1fkM1JEUM9NH7jeegl7yY7sQ0OP8SlA__" },
+  { id: 17, src: "https://drive.google.com/uc?export=view&id=15WPs9H1Ttmlwn69qJ2LA_Z6FvoVvRzd0" },
+  { id: 18, src: "https://drive.google.com/uc?export=view&id=1IklgtfAeUSaltRxNk8MyUvv8VvRsBeiK" },
+  { id: 19, src: "https://drive.google.com/uc?export=view&id=1RJ_mRlDgM60zDepU-tkLLNlig_CSkWvi" },
 ];
 
 export function Gallery() {
@@ -35,21 +48,17 @@ export function Gallery() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.5, delay: (index % 6) * 0.1 }}
               className="break-inside-avoid relative group rounded-2xl overflow-hidden bg-white/5"
             >
               <img
                 src={art.src}
-                alt={art.title}
+                alt={`Artwork ${art.id}`}
                 className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
                 loading="lazy"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                <h3 className="text-white font-display font-bold text-xl translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  {art.title}
-                </h3>
-              </div>
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
             </motion.div>
           ))}
         </div>
