@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { PROJECTS } from "../constants";
 import { Sparkles, ArrowRight, Spline, Box, Brush, Image as ImageIcon, Sparkles as SparklesIcon } from "lucide-react";
@@ -8,8 +8,22 @@ const CATEGORIES = ["All", "Merge", "Puzzle & Sort", "Tower Defense", "Idle & Ty
 
 export function ProjectGallery() {
   const [activeCategory, setActiveCategory] = useState<typeof CATEGORIES[number]>("All");
+  const [shuffledProjects, setShuffledProjects] = useState(PROJECTS);
 
-  const filteredProjects = PROJECTS.filter(
+  useEffect(() => {
+    const shuffleArray = (array: typeof PROJECTS) => {
+      const newArray = [...array];
+      for (let i = newArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+      }
+      return newArray;
+    };
+    
+    setShuffledProjects(shuffleArray(PROJECTS));
+  }, []);
+
+  const filteredProjects = shuffledProjects.filter(
     (project) => activeCategory === "All" || project.category === activeCategory
   );
 
@@ -83,6 +97,15 @@ export function ProjectGallery() {
                 transition={{ duration: 0.4 }}
                 className="group relative h-[400px] rounded-2xl overflow-hidden glass border-white/5 hover:border-accent/50 hover:shadow-lg transition-all"
               >
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute inset-0 z-20"
+                    aria-label={`View ${project.title}`}
+                  />
+                )}
                 <img
                   src={project.image}
                   alt={project.title}
@@ -91,7 +114,7 @@ export function ProjectGallery() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
-                <div className="absolute inset-0 p-8 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-8 group-hover:translate-y-0">
+                <div className="absolute inset-0 p-8 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-8 group-hover:translate-y-0 pointer-events-none z-10">
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tools.map((tool) => (
                       <span
@@ -106,17 +129,12 @@ export function ProjectGallery() {
                   <h3 className="text-2xl font-bold mb-2 group-hover:text-accent transition-colors font-display">{project.title}</h3>
                   <p className="text-ink/60 text-sm mb-6 font-mono uppercase tracking-widest">{project.category}</p>
                   {project.link ? (
-                    <a 
-                      href={project.link} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-accent font-bold text-sm hover:text-white transition-colors uppercase tracking-wider font-mono"
-                    >
+                    <div className="flex items-center gap-2 text-accent font-bold text-sm transition-colors uppercase tracking-wider font-mono">
                       <span>View Project</span>
                       <ArrowRight className="w-4 h-4" />
-                    </a>
+                    </div>
                   ) : (
-                    <button className="flex items-center gap-2 text-accent font-bold text-sm hover:text-white transition-colors uppercase tracking-wider font-mono">
+                    <button className="flex items-center gap-2 text-accent font-bold text-sm hover:text-white transition-colors uppercase tracking-wider font-mono pointer-events-auto">
                       <span>View Details</span>
                       <ArrowRight className="w-4 h-4" />
                     </button>

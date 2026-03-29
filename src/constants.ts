@@ -129,6 +129,46 @@ export const PROJECTS: Project[] = [
     tools: ["Blender", "Photoshop"],
     link: "https://play-lh.googleusercontent.com/bNPvfkhfDOIV7dG3d19sJvv04_UUcF7EKnCLLsYAKA3H0NNFxhX5hM4yn3_5lRwSvtY",
   },
+  {
+    id: "play-word",
+    title: "Play Word!",
+    category: "Puzzle & Sort",
+    image: "https://play-lh.googleusercontent.com/jQ6JpU8h1K7FwR3PEymz92gW1hi60-gaTzsHCdooHxaoCMwhwNMzBY4YPtI4Pj2csjtSX1n0u-c39zW-Xbp8ZTg",
+    tools: ["Photoshop", "Procreate"],
+    link: "https://play.google.com/store/apps/details?id=com.gamestown.word.puzzle.game",
+  },
+  {
+    id: "nut-craze",
+    title: "Nut Craze: Color Sort Puzzle",
+    category: "Puzzle & Sort",
+    image: "https://play-lh.googleusercontent.com/s_PD_MNvArxzxAzlwLQBTHLjYDSfuv977gUOXpku6Lg4CrYgO-HiDLFMPQ-pXI2LbwB1zgx_1dfc-G_hpEWqyA",
+    tools: ["Photoshop", "Procreate"],
+    link: "https://play.google.com/store/apps/details?id=com.nut.sort.colorsorting",
+  },
+  {
+    id: "pair-pix",
+    title: "Pair Pix: Pictures Association",
+    category: "Puzzle & Sort",
+    image: "https://play-lh.googleusercontent.com/vDniVoZc_Isy5Baf4pn94k8XQClpNe2K28IWZyjJjuuEy-QfA5d8djuTwxAI_J57k7fmjele4mKZo4XeP_ilXg",
+    tools: ["Photoshop", "Procreate"],
+    link: "https://play.google.com/store/apps/details?id=com.mahjong.picture.associations",
+  },
+  {
+    id: "pencil-sort",
+    title: "Pencil Sort 3D: Color Match",
+    category: "Puzzle & Sort",
+    image: "https://play-lh.googleusercontent.com/iKMq-22k3bMvzdvNR0m4IEBg_nFSSrQSf_QofIiVGlBYqucfwh2zxgKJudF8sKBAFpdrGq7DMVDbKNVrRyBSSJI",
+    tools: ["Blender", "Photoshop"],
+    link: "https://play.google.com/store/apps/details?id=com.sortpuzzle.color.sort",
+  },
+  {
+    id: "weed-burger-ready",
+    title: "Weed Burger Ready!",
+    category: "Idle & Tycoon",
+    image: "https://play-lh.googleusercontent.com/vbRUM_zNK1wgq5DrQ-PlIR6PzFNK4cP1d2k52bA4OSbQTfihkHe4kaLVWjmQ2H0WTqur75iNy3IlRozGIly21A",
+    tools: ["Blender", "Photoshop"],
+    link: "https://play.google.com/store/apps/details?id=com.weedready.idle.foodgame",
+  },
 ];
 
 export const TOOLS: Tool[] = [
