@@ -94,8 +94,7 @@ export function Hero() {
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
           <a
-            href="/resume.pdf"
-            download
+            href="https://drive.google.com/uc?export=download&id=1QJIh-hRWU6A6aTlogyBje6COFJj-EPRR"
             className="px-8 py-4 rounded-full text-lg font-semibold text-white glass hover:bg-white/10 transition-all flex items-center gap-2"
           >
             Download Resume
