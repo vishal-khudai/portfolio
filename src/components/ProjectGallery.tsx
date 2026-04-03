@@ -4,7 +4,7 @@ import { PROJECTS } from "../constants";
 import { Sparkles, ArrowRight, Spline, Box, Brush, Image as ImageIcon, Sparkles as SparklesIcon } from "lucide-react";
 import { cn } from "../lib/utils";
 
-const CATEGORIES = ["All", "Merge", "Puzzle & Sort", "Tower Defense", "Idle & Tycoon", "Arcade"] as const;
+const CATEGORIES = ["All", "Merge", "Puzzle & Sort", "Tower Defense", "Idle & Tycoon", "Arcade", "UI/Logos"] as const;
 
 export function ProjectGallery() {
   const [activeCategory, setActiveCategory] = useState<typeof CATEGORIES[number]>("All");

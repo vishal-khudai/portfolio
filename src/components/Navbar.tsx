@@ -25,26 +25,28 @@ export function Navbar() {
     <nav
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4",
-        isScrolled ? "glass-dark py-3" : "bg-transparent"
+        isScrolled 
+          ? "glass-dark py-3" 
+          : "bg-transparent"
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <a href="#home" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 bg-accent rounded-xl flex items-center justify-center group-hover:rotate-12 transition-transform shadow-lg shadow-accent/20">
-            <Gamepad2 className="text-bg w-6 h-6" />
+        <a href="#home" className="flex items-center gap-3 group">
+          <div className="w-16 h-16 flex items-center justify-center group-hover:rotate-12 transition-transform shadow-2xl relative overflow-hidden bg-accent shadow-accent/20 rounded-xl">
+            <Gamepad2 className="w-10 h-10 text-bg" />
           </div>
-          <span className="font-display font-bold text-xl tracking-tight">
-            <span className="text-accent">VK</span> <span className="text-white">Studio</span>
+          <span className="font-display font-black text-4xl tracking-tight italic text-white">
+            <span className="text-accent">VK</span> Studio
           </span>
         </a>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-12">
           {NAV_LINKS.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-ink/70 hover:text-accent transition-colors"
+              className="text-sm font-black transition-all uppercase tracking-widest relative group/link text-ink/70 hover:text-accent"
             >
               {link.name}
             </a>
@@ -53,10 +55,10 @@ export function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-white"
+          className="md:hidden p-2 rounded-xl transition-colors text-white hover:bg-white/5"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          {isMobileMenuOpen ? <X /> : <Menu />}
+          {isMobileMenuOpen ? <X size={36} /> : <Menu size={36} />}
         </button>
       </div>
 
@@ -64,17 +66,17 @@ export function Navbar() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 right-0 glass-dark p-6 md:hidden flex flex-col gap-4"
+            initial={{ opacity: 0, y: -20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -20, scale: 0.95 }}
+            className="absolute top-full left-6 right-6 p-8 md:hidden flex flex-col gap-6 mt-4 glass-dark rounded-2xl"
           >
             {NAV_LINKS.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-lg font-medium text-ink/70 hover:text-accent"
+                className="text-3xl font-black transition-all uppercase tracking-widest italic text-ink/70 hover:text-accent"
               >
                 {link.name}
               </a>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Sparkles, Send, Phone, MapPin, CheckCircle, Mail, Linkedin } from "lucide-react";
+import { cn } from "../lib/utils";
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -51,35 +52,35 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 px-6 bg-bg relative overflow-hidden">
+    <section id="contact" className="py-32 px-6 relative overflow-hidden transition-colors duration-500 bg-bg">
       {/* Whimsical Background Elements */}
-      <div className="absolute inset-0 pointer-events-none opacity-20">
+      <div className="absolute inset-0 pointer-events-none opacity-30">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent" />
         <motion.div
           animate={{ rotate: 360 }}
-          transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
-          className="absolute -bottom-1/4 -right-1/4 w-[800px] h-[800px] border border-accent/10 rounded-full"
+          transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
+          className="absolute -bottom-1/4 -right-1/4 w-[1000px] h-[1000px] border rounded-full border-accent/10"
         />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-32">
           {/* Left: Contact Info */}
           <div>
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="flex items-center gap-2 text-accent font-bold uppercase tracking-widest text-sm mb-4 font-mono"
+              className="flex items-center gap-3 font-black uppercase tracking-widest text-base mb-6 text-accent"
             >
-              <Sparkles className="w-4 h-4" />
+              <Sparkles className="w-6 h-6" />
               <span>The Conversion</span>
             </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-8"
+              className="text-6xl md:text-8xl lg:text-9xl font-display font-black leading-tight mb-10 italic text-white"
             >
               Let's Build Your <br />
               <span className="text-gradient">Next Masterpiece</span>
@@ -89,7 +90,7 @@ export function Contact() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-ink/70 text-lg mb-12 max-w-md"
+              className="text-2xl md:text-3xl mb-16 max-w-lg leading-relaxed text-ink/70"
             >
               Ready to elevate your game's visual identity? 
               Whether you're an indie studio or an established publisher, 
@@ -99,25 +100,25 @@ export function Contact() {
             <div className="space-y-8">
               {[
                 { 
-                  icon: <Mail className="w-6 h-6" />, 
+                  icon: <Mail className="w-8 h-8" />, 
                   label: "Email", 
                   value: "khudaivishal@gmail.com",
                   href: "https://mail.google.com/mail/?view=cm&fs=1&to=khudaivishal@gmail.com"
                 },
                 { 
-                  icon: <Linkedin className="w-6 h-6" />, 
+                  icon: <Linkedin className="w-8 h-8" />, 
                   label: "LinkedIn", 
                   value: "vishal-khudai",
                   href: "https://www.linkedin.com/in/vishal-khudai/"
                 },
                 { 
-                  icon: <Phone className="w-6 h-6" />, 
+                  icon: <Phone className="w-8 h-8" />, 
                   label: "Phone", 
                   value: "+91 7874120249",
                   href: "tel:+917874120249"
                 },
                 { 
-                  icon: <MapPin className="w-6 h-6" />, 
+                  icon: <MapPin className="w-8 h-8" />, 
                   label: "Location", 
                   value: "Rajkot, Gujarat, India",
                   href: "https://www.google.com/maps/search/?api=1&query=Rajkot,+Gujarat,+India"
@@ -138,22 +139,22 @@ export function Contact() {
                       rel="noopener noreferrer" 
                       className="flex items-center gap-6 w-full"
                     >
-                      <div className="w-12 h-12 rounded-2xl glass flex items-center justify-center text-accent group-hover:text-white group-hover:border-accent group-hover:shadow-[0_0_15px_rgba(250,204,21,0.2)] transition-all shrink-0 border-accent/30">
+                      <div className="w-16 h-16 flex items-center justify-center transition-all shrink-0 rounded-2xl glass text-accent group-hover:text-white group-hover:border-accent group-hover:shadow-[0_0_15px_rgba(250,204,21,0.2)] border-accent/30">
                         {item.icon}
                       </div>
                       <div>
-                        <div className="text-xs text-accent-light uppercase tracking-widest font-mono mb-1">{item.label}</div>
-                        <div className="text-lg font-bold text-white group-hover:text-accent transition-colors font-display tracking-wider">{item.value}</div>
+                        <div className="text-xs uppercase tracking-widest font-black mb-1 text-accent-light">{item.label}</div>
+                        <div className="text-xl font-black transition-colors font-display tracking-wider italic text-white group-hover:text-accent">{item.value}</div>
                       </div>
                     </a>
                   ) : (
                     <>
-                      <div className="w-12 h-12 rounded-2xl glass flex items-center justify-center text-accent group-hover:text-white group-hover:border-accent group-hover:shadow-[0_0_15px_rgba(250,204,21,0.2)] transition-all shrink-0 border-accent/30">
+                      <div className="w-16 h-16 flex items-center justify-center transition-all shrink-0 rounded-2xl glass text-accent group-hover:text-white group-hover:border-accent group-hover:shadow-[0_0_15px_rgba(250,204,21,0.2)] border-accent/30">
                         {item.icon}
                       </div>
                       <div>
-                        <div className="text-xs text-accent-light uppercase tracking-widest font-mono mb-1">{item.label}</div>
-                        <div className="text-lg font-bold text-white group-hover:text-accent transition-colors font-display tracking-wider">{item.value}</div>
+                        <div className="text-xs uppercase tracking-widest font-black mb-1 text-accent-light">{item.label}</div>
+                        <div className="text-xl font-black transition-colors font-display tracking-wider italic text-white group-hover:text-accent">{item.value}</div>
                       </div>
                     </>
                   )}
@@ -167,7 +168,7 @@ export function Contact() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="p-10 rounded-2xl glass border-accent/20 relative shadow-lg"
+            className="p-12 relative shadow-[0_20px_40px_rgba(0,0,0,0.2)] transition-all overflow-hidden rounded-2xl glass border-accent/20"
           >
             <AnimatePresence mode="wait">
               {!isSubmitted ? (
@@ -177,7 +178,7 @@ export function Contact() {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   onSubmit={handleSubmit}
-                  className="space-y-8"
+                  className="space-y-10"
                 >
                   <div className="relative group">
                     <input
@@ -186,12 +187,12 @@ export function Contact() {
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full bg-transparent border-b-2 border-white/10 py-3 text-white focus:outline-none focus:border-accent transition-colors peer"
+                      className="w-full bg-transparent border-b-[5px] py-5 focus:outline-none transition-colors peer text-2xl font-black border-white/10 text-white focus:border-accent"
                       placeholder=" "
                     />
                     <label
                       htmlFor="name"
-                      className="absolute left-0 top-3 text-ink/40 transition-all pointer-events-none peer-focus:-top-4 peer-focus:text-xs peer-focus:text-accent peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs"
+                      className="absolute left-0 top-5 transition-all pointer-events-none peer-focus:-top-6 peer-focus:text-sm peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-sm text-ink/40 peer-focus:text-accent"
                     >
                       Your Name
                     </label>
@@ -203,12 +204,12 @@ export function Contact() {
                       id="studio"
                       value={formData.studio}
                       onChange={(e) => setFormData({ ...formData, studio: e.target.value })}
-                      className="w-full bg-transparent border-b-2 border-white/10 py-3 text-white focus:outline-none focus:border-accent transition-colors peer"
+                      className="w-full bg-transparent border-b-[5px] py-5 focus:outline-none transition-colors peer text-2xl font-black border-white/10 text-white focus:border-accent"
                       placeholder=" "
                     />
                     <label
                       htmlFor="studio"
-                      className="absolute left-0 top-3 text-ink/40 transition-all pointer-events-none peer-focus:-top-4 peer-focus:text-xs peer-focus:text-accent peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs"
+                      className="absolute left-0 top-5 transition-all pointer-events-none peer-focus:-top-6 peer-focus:text-sm peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-sm text-ink/40 peer-focus:text-accent"
                     >
                       Studio / Company
                     </label>
@@ -221,12 +222,12 @@ export function Contact() {
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full bg-transparent border-b-2 border-white/10 py-3 text-white focus:outline-none focus:border-accent transition-colors peer"
+                      className="w-full bg-transparent border-b-[5px] py-5 focus:outline-none transition-colors peer text-2xl font-black border-white/10 text-white focus:border-accent"
                       placeholder=" "
                     />
                     <label
                       htmlFor="email"
-                      className="absolute left-0 top-3 text-ink/40 transition-all pointer-events-none peer-focus:-top-4 peer-focus:text-xs peer-focus:text-accent peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs"
+                      className="absolute left-0 top-5 transition-all pointer-events-none peer-focus:-top-6 peer-focus:text-sm peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-sm text-ink/40 peer-focus:text-accent"
                     >
                       Email Address
                     </label>
@@ -239,12 +240,12 @@ export function Contact() {
                       rows={4}
                       value={formData.details}
                       onChange={(e) => setFormData({ ...formData, details: e.target.value })}
-                      className="w-full bg-transparent border-b-2 border-white/10 py-3 text-white focus:outline-none focus:border-accent transition-colors peer resize-none"
+                      className="w-full bg-transparent border-b-[5px] py-5 focus:outline-none transition-colors peer resize-none text-2xl font-black border-white/10 text-white focus:border-accent"
                       placeholder=" "
                     />
                     <label
                       htmlFor="details"
-                      className="absolute left-0 top-3 text-ink/40 transition-all pointer-events-none peer-focus:-top-4 peer-focus:text-xs peer-focus:text-accent peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs"
+                      className="absolute left-0 top-5 transition-all pointer-events-none peer-focus:-top-6 peer-focus:text-sm peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-sm text-ink/40 peer-focus:text-accent"
                     >
                       Project Details
                     </label>
@@ -253,10 +254,10 @@ export function Contact() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-accent hover:bg-white text-black py-5 rounded-2xl font-bold text-lg transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100 uppercase tracking-widest font-mono"
+                    className="w-full py-8 rounded-[2rem] font-black text-3xl transition-all shadow-[0_15px_30px_rgba(0,0,0,0.3)] flex items-center justify-center gap-4 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100 uppercase tracking-widest relative overflow-hidden bg-accent hover:bg-white text-black hover:scale-[1.02] active:scale-[0.98]"
                   >
                     {isSubmitting ? "Sending..." : "Send Message"}
-                    {!isSubmitting && <Send className="w-5 h-5" />}
+                    {!isSubmitting && <Send className="w-10 h-10" />}
                   </button>
                 </motion.form>
               ) : (
@@ -266,11 +267,11 @@ export function Contact() {
                   animate={{ opacity: 1, scale: 1 }}
                   className="flex flex-col items-center justify-center text-center py-20"
                 >
-                  <div className="w-20 h-20 bg-accent rounded-full flex items-center justify-center mb-6 shadow-lg shadow-accent/25">
-                    <CheckCircle className="w-10 h-10 text-bg" />
+                  <div className="w-24 h-24 rounded-full flex items-center justify-center mb-8 shadow-lg bg-accent shadow-accent/25">
+                    <CheckCircle className="w-12 h-12 text-bg" />
                   </div>
-                  <h3 className="text-3xl font-bold mb-4 text-white">Message Sent!</h3>
-                  <p className="text-ink/70 text-lg">
+                  <h3 className="text-4xl font-black mb-4 italic text-white">Message Sent!</h3>
+                  <p className="text-xl text-ink/70">
                     Thank you for reaching out. <br />
                     I'll get back to you within 24 hours.
                   </p>

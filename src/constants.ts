@@ -169,6 +169,14 @@ export const PROJECTS: Project[] = [
     tools: ["Blender", "Photoshop"],
     link: "https://play.google.com/store/apps/details?id=com.weedready.idle.foodgame",
   },
+  {
+    id: "mahjong-ui",
+    title: "Mahjong Association: UI Design",
+    category: "UI/Logos",
+    image: "https://lh3.googleusercontent.com/d/1vDniVoZc_Isy5Baf4pn94k8XQClpNe2K28IWZyjJjuuEy-QfA5d8djuTwxAI_J57k7fmjele4mKZo4XeP_ilXg",
+    tools: ["Photoshop", "Affinity Designer"],
+    link: "https://play.google.com/store/apps/details?id=com.mahjong.picture.associations",
+  },
 ];
 
 export const TOOLS: Tool[] = [

@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { cn } from "../lib/utils";
 import { X } from "lucide-react";
 
-const ART_CATEGORIES = ["All", "Assets", "Map"] as const;
+const ART_CATEGORIES = ["All", "Assets", "Map", "UI"] as const;
 
 const ARTWORKS = [
   // Assets
@@ -57,6 +57,9 @@ const ARTWORKS = [
   { id: 65, category: "Map", src: "https://lh3.googleusercontent.com/d/1OlWJrGUvYzZ05tsekxSo7U555cmTLqVV" },
   { id: 66, category: "Map", src: "https://lh3.googleusercontent.com/d/1kCnM1m2ELdHCnLhIZgNVWrQUXNQfUT5U" },
   { id: 67, category: "Map", src: "https://lh3.googleusercontent.com/d/1Mo-IFlF5d6595trdXvm0PNi0ZfsBGaqJ" },
+  
+  // UI
+  { id: 68, category: "UI", src: "https://lh3.googleusercontent.com/d/1vDniVoZc_Isy5Baf4pn94k8XQClpNe2K28IWZyjJjuuEy-QfA5d8djuTwxAI_J57k7fmjele4mKZo4XeP_ilXg" },
 ];
 
 export function Gallery() {
