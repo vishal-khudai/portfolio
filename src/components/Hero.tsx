@@ -3,11 +3,10 @@ import { ArrowRight, Sparkles, Gamepad2, Download, Loader2 } from "lucide-react"
 import { cn } from "../lib/utils";
 import { useRef } from "react";
 import { useResumeDownload } from "../hooks/useResumeDownload";
-import { ResumeTemplate } from "./ResumeTemplate";
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const { resumeRef, downloadResume, isDownloading } = useResumeDownload();
+  const { downloadResume, isDownloading } = useResumeDownload();
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"]
@@ -23,7 +22,6 @@ export function Hero() {
       ref={containerRef}
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-36"
     >
-      <ResumeTemplate ref={resumeRef} />
       {/* Background Glows */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[800px] h-[800px] blur-[150px] rounded-full opacity-20 bg-accent/10" />

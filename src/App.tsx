@@ -4,6 +4,7 @@ import { ProjectGallery } from "./components/ProjectGallery";
 import { Gallery } from "./components/Gallery";
 import { AboutArsenal } from "./components/AboutArsenal";
 import { Contact } from "./components/Contact";
+import { LoadingScreen } from "./components/LoadingScreen";
 import { motion, useScroll, useSpring } from "motion/react";
 import { Gamepad2 } from "lucide-react";
 import { cn } from "./lib/utils";
@@ -18,6 +19,7 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen selection:bg-accent selection:text-bg transition-colors duration-500">
+      <LoadingScreen />
       {/* Progress Bar */}
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 origin-left z-[60] shadow-2xl bg-accent"
