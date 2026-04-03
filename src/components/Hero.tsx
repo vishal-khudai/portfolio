@@ -54,7 +54,7 @@ export function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Top Right - Pear Tree */}
+        {/* Top Right - Nut Sort */}
         <motion.div
           style={{ y: y2 }}
           className="absolute top-[20%] right-[5%] w-72 h-56 hidden xl:block"
@@ -72,7 +72,7 @@ export function Hero() {
             }}
             className="w-full h-full rounded-3xl overflow-hidden shadow-2xl border-2 border-white/5 opacity-40 hover:opacity-100 transition-opacity duration-500"
           >
-            <img src="https://play-lh.googleusercontent.com/sYzYwjDiL5IgsbyCXLQrNzDOpS3-K5EcO3WKtODu_XRUpLXhwpDXFFrfJBFM6d9JDVCG" alt="Candy Sort" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+            <img src="https://play-lh.googleusercontent.com/s_PD_MNvArxzxAzlwLQBTHLjYDSfuv977gUOXpku6Lg4CrYgO-HiDLFMPQ-pXI2LbwB1zgx_1dfc-G_hpEWqyA" alt="Nut Craze" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
           </motion.div>
         </motion.div>
 
@@ -98,7 +98,7 @@ export function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Bottom Right - Sandwich */}
+        {/* Bottom Right - Merge Fever */}
         <motion.div
           style={{ y: y1 }}
           className="absolute bottom-[10%] right-[8%] w-80 h-60 hidden xl:block"
@@ -116,7 +116,7 @@ export function Hero() {
             }}
             className="w-full h-full rounded-3xl overflow-hidden shadow-2xl border-2 border-white/5 opacity-40 hover:opacity-100 transition-opacity duration-500"
           >
-            <img src="https://play-lh.googleusercontent.com/-FrcJNYIXaoMIMZaFEEBUoYyIIgH8RceoMIiXg1zWDuWJWG-g9gC3_JYy_VldTj_Og" alt="Tales & Dragons" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+            <img src="https://play-lh.googleusercontent.com/jnAdtgmG3F-HmhNmZnboA6HOqZKnyfa8T1Dxf1_lgworr5JEjR-NRWu1mq8JzWIDr5U" alt="Merge Fever" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
           </motion.div>
         </motion.div>
       </div>

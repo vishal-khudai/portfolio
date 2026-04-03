@@ -84,7 +84,7 @@ export function Contact() {
 
             <div className="space-y-10">
               {[
-                { icon: <Mail className="w-6 h-6" />, label: "EMAIL", value: "khudaivishal@gmail.com", href: "mailto:khudaivishal@gmail.com" },
+                { icon: <Mail className="w-6 h-6" />, label: "EMAIL", value: "khudaivishal@gmail.com", href: "https://mail.google.com/mail/?view=cm&fs=1&to=khudaivishal@gmail.com" },
                 { icon: <Linkedin className="w-6 h-6" />, label: "LINKEDIN", value: "vishal-khudai", href: "https://www.linkedin.com/in/vishal-khudai/" },
                 { icon: <Send className="w-6 h-6" />, label: "PHONE", value: "+91 7874120249", href: "tel:+917874120249" },
                 { icon: <Target className="w-6 h-6" />, label: "LOCATION", value: "Rajkot, Gujarat, India", href: "https://www.google.com/maps/search/?api=1&query=Rajkot,+Gujarat,+India" },
