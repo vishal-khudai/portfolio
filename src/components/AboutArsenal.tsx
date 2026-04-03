@@ -17,7 +17,7 @@ export function AboutArsenal() {
   };
 
   return (
-    <section id="about" className="py-32 px-6">
+    <section id="about" className="py-32 px-6 relative">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
           {/* Left: About / The Story */}

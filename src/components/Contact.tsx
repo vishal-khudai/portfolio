@@ -49,7 +49,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-32 px-6">
+    <section id="contact" className="py-32 px-6 relative">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
           {/* Left: Contact Info */}

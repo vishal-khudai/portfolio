@@ -30,7 +30,6 @@ const ARTWORKS = [
   { id: 38, category: "Map", src: "https://lh3.googleusercontent.com/d/1a2Qnfzc3h9fiBptMcvYAx9brshmIes5d" },
   { id: 39, category: "Map", src: "https://lh3.googleusercontent.com/d/167OlBYEAHowgiihYLRX5Df4x1ShagEdk" },
   { id: 40, category: "Map", src: "https://lh3.googleusercontent.com/d/1fkM1JEUM9NH7jeegl7yY7sQ0OP8SlA__" },
-  { id: 41, category: "Map", src: "https://lh3.googleusercontent.com/d/15WPs9H1Ttmlwn69qJ2LA_Z6FvoVvRzd" },
   { id: 42, category: "Map", src: "https://lh3.googleusercontent.com/d/1IklgtfAeUSaltRxNk8MyUvv8VvRsBeiK" },
   { id: 43, category: "Map", src: "https://lh3.googleusercontent.com/d/1RJ_mRlDgM60zDepU-tkLLNlig_CSkWvi" },
   { id: 44, category: "Map", src: "https://lh3.googleusercontent.com/d/1OxO1nLmw3cJz9S7-5kN5NPQ6yrlCrZb0" },

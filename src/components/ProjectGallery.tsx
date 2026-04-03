@@ -4,7 +4,7 @@ import { PROJECTS } from "../constants";
 import { Sparkles, ArrowRight, Spline, Box, Brush, Image as ImageIcon, Sparkles as SparklesIcon } from "lucide-react";
 import { cn } from "../lib/utils";
 
-const CATEGORIES = ["All", "Merge", "Puzzle & Sort", "Tower Defense", "Idle & Tycoon", "Arcade", "UI/Logos"] as const;
+const CATEGORIES = ["All", "Merge", "Puzzle & Sort", "Tower Defense", "Idle & Tycoon", "Arcade"] as const;
 
 export function ProjectGallery() {
   const [activeCategory, setActiveCategory] = useState<typeof CATEGORIES[number]>("All");
@@ -45,7 +45,7 @@ export function ProjectGallery() {
   };
 
   return (
-    <section id="projects" className="py-24 px-6">
+    <section id="projects" className="py-24 px-6 relative">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <motion.div
