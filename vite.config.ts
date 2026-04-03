@@ -4,6 +4,6 @@ import { defineConfig, loadEnv } from 'vite';
 
 // Vite configuration for static deployment
 export default defineConfig({
-  base: '/portfolio/',
+  base: '/',
   plugins: [react(), tailwindcss()],
 });

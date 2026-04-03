@@ -17,39 +17,39 @@ export function AboutArsenal() {
   };
 
   return (
-    <section id="about" className="py-32 px-6 transition-colors duration-500 bg-surface/30">
+    <section id="about" className="py-32 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-32 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
           {/* Left: About / The Story */}
-          <div className="relative">
+          <div>
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="flex items-center gap-3 font-black uppercase tracking-widest text-base mb-8 text-accent"
+              className="flex items-center gap-2 text-accent text-xs font-bold uppercase tracking-[0.2em] mb-8"
             >
-              <Sparkles className="w-6 h-6" />
+              <Sparkles className="w-4 h-4" />
               <span>The Story</span>
             </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-6xl md:text-8xl lg:text-9xl font-display font-black leading-tight mb-12 italic text-white"
+              className="text-5xl md:text-7xl font-display font-black leading-tight mb-12 text-white"
             >
               Technical Artistry <br />
-              <span className="text-gradient">& Creative Vision</span>
+              <span className="text-accent">& Creative Vision</span>
             </motion.h2>
             
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="space-y-8 text-2xl md:text-3xl leading-relaxed text-ink/70"
+              className="space-y-6 text-lg md:text-xl leading-relaxed text-ink/60 mb-16"
             >
               <p>
                 I'm <span className="text-white font-bold">Vishal Khudai</span>, a passionate Game Artist and Computer Engineer, 
-                specializing in both 2D and 3D art at <span className="text-white font-black">The AppGuruz</span>. 
+                specializing in both 2D and 3D art at <span className="text-white font-bold">The AppGuruz</span>. 
                 Since joining in June 2020, I've grown from a Junior Artist into my current role as a <span className="text-accent font-bold">Senior Artist</span>.
               </p>
               <p>
@@ -59,71 +59,61 @@ export function AboutArsenal() {
               </p>
             </motion.div>
 
-            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                { icon: <Briefcase className="w-8 h-8" />, label: "Leadership", desc: "Studio Lead", xp: 95 },
-                { icon: <Users className="w-8 h-8" />, label: "Collaboration", desc: "Cross-functional", xp: 90 },
-                { icon: <Target className="w-8 h-8" />, label: "Results", desc: "High-quality", xp: 98 },
+                { icon: <Briefcase className="w-6 h-6" />, label: "Leadership", desc: "Studio Lead" },
+                { icon: <Users className="w-6 h-6" />, label: "Collaboration", desc: "Cross-functional" },
+                { icon: <Target className="w-6 h-6" />, label: "Results", desc: "High-quality" },
               ].map((item, i) => (
                 <motion.div
                   key={item.label}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  whileHover={{ y: -10, scale: 1.05 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.1, type: "spring", stiffness: 300 }}
-                  className="p-10 cursor-default transition-all rounded-2xl glass border-accent/20 hover:border-accent hover:shadow-lg"
+                  transition={{ delay: i * 0.1 }}
+                  className="p-8 rounded-2xl bg-white/5 border border-white/5 hover:border-accent/20 transition-all group backdrop-blur-sm"
                 >
-                  <div className="mb-6 p-4 rounded-2xl inline-block text-accent">{item.icon}</div>
-                  <div className="font-display font-black mb-3 tracking-widest text-2xl italic text-white">{item.label}</div>
-                  <div className="text-sm uppercase tracking-widest font-black mb-6 text-accent-light">{item.desc}</div>
+                  <div className="mb-6 text-accent group-hover:scale-110 transition-transform">{item.icon}</div>
+                  <div className="font-display font-bold text-xl text-white mb-1">{item.label}</div>
+                  <div className="text-[10px] font-bold uppercase tracking-widest text-accent/60">{item.desc}</div>
                 </motion.div>
               ))}
             </div>
           </div>
 
-          <div className="relative">
-            <div className="absolute inset-0 blur-[120px] rounded-full bg-accent/5" />
-            
-            <div className="relative grid grid-cols-2 gap-8">
-              {TOOLS.map((tool, index) => (
-                <motion.div
-                  key={tool.name}
-                  animate={{ 
-                    y: [0, -20, 0],
-                    rotate: [0, index % 2 === 0 ? 3 : -3, 0]
-                  }}
-                  transition={{ 
-                    duration: 5 + index, 
-                    repeat: Infinity, 
-                    ease: "easeInOut",
-                    delay: index * 0.5
-                  }}
-                  className="p-12 flex flex-col items-center justify-center text-center transition-all group rounded-2xl glass border-accent/20 hover:border-accent hover:shadow-lg"
-                >
-                  <div className="mb-8 transform group-hover:scale-125 transition-transform duration-500">
-                    {getToolIcon(tool.icon, tool.color || "#fff")}
-                  </div>
-                  <div className="font-display font-black mb-3 tracking-widest text-3xl italic text-white">{tool.name}</div>
-                  <div className="text-sm uppercase tracking-widest font-black text-accent">Mastery</div>
-                </motion.div>
-              ))}
-              
-              {/* Extra floating element for visual balance */}
+          {/* Right: Tools Grid */}
+          <div className="grid grid-cols-2 gap-6">
+            {TOOLS.map((tool, index) => (
               <motion.div
-                animate={{ 
-                  y: [0, 30, 0],
-                  rotate: [0, 360]
-                }}
-                transition={{ 
-                  y: { duration: 6, repeat: Infinity, ease: "easeInOut" },
-                  rotate: { duration: 20, repeat: Infinity, ease: "linear" }
-                }}
-                className="absolute -top-16 -right-16 w-32 h-32 flex items-center justify-center hidden lg:flex shadow-2xl transition-all z-10 glass rounded-2xl border-accent-light/30 text-accent-light"
+                key={tool.name}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="p-10 rounded-2xl bg-white/5 border border-white/5 hover:border-accent/30 transition-all flex flex-col items-center text-center group backdrop-blur-sm"
               >
-                <Sparkles className="w-14 h-14 text-accent-light" />
+                <div className="mb-6 group-hover:scale-110 transition-transform duration-500">
+                  {getToolIcon(tool.icon, tool.color || "#fff")}
+                </div>
+                <div className="font-display font-bold text-xl text-white mb-1">{tool.name}</div>
+                <div className="text-[10px] font-bold uppercase tracking-widest text-accent">Expert</div>
               </motion.div>
-            </div>
+            ))}
+            
+            {/* Floating Sparkle Element */}
+            <motion.div
+              animate={{ 
+                y: [0, 20, 0],
+                rotate: [0, 360]
+              }}
+              transition={{ 
+                y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+                rotate: { duration: 15, repeat: Infinity, ease: "linear" }
+              }}
+              className="w-24 h-24 flex items-center justify-center bg-white/5 border border-accent/20 rounded-2xl text-accent shadow-2xl shadow-accent/10 backdrop-blur-sm"
+            >
+              <Sparkles className="w-10 h-10" />
+            </motion.div>
           </div>
         </div>
       </div>

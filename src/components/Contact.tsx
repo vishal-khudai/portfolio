@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Sparkles, Send, Phone, MapPin, CheckCircle, Mail, Linkedin } from "lucide-react";
-import { cn } from "../lib/utils";
+import { Sparkles, Send, Mail, Linkedin, Target } from "lucide-react";
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -41,134 +40,84 @@ export function Contact() {
         setTimeout(() => setIsSubmitted(false), 5000);
       } else {
         console.error("Form submission failed", result);
-        alert("Something went wrong. Please try again later.");
       }
     } catch (error) {
       console.error("Error submitting form", error);
-      alert("Something went wrong. Please try again later.");
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <section id="contact" className="py-32 px-6 relative overflow-hidden transition-colors duration-500 bg-bg">
-      {/* Whimsical Background Elements */}
-      <div className="absolute inset-0 pointer-events-none opacity-30">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent" />
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
-          className="absolute -bottom-1/4 -right-1/4 w-[1000px] h-[1000px] border rounded-full border-accent/10"
-        />
-      </div>
-
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-32">
+    <section id="contact" className="py-32 px-6">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
           {/* Left: Contact Info */}
           <div>
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="flex items-center gap-3 font-black uppercase tracking-widest text-base mb-6 text-accent"
+              className="flex items-center gap-2 text-accent text-xs font-bold uppercase tracking-[0.2em] mb-8"
             >
-              <Sparkles className="w-6 h-6" />
-              <span>The Conversion</span>
+              <Sparkles className="w-4 h-4" />
+              <span>Get in Touch</span>
             </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-6xl md:text-8xl lg:text-9xl font-display font-black leading-tight mb-10 italic text-white"
+              className="text-5xl md:text-7xl font-display font-black leading-tight mb-12 text-white"
             >
-              Let's Build Your <br />
-              <span className="text-gradient">Next Masterpiece</span>
+              Let's Build <br />
+              <span className="text-accent">Something Epic</span>
             </motion.h2>
             
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-2xl md:text-3xl mb-16 max-w-lg leading-relaxed text-ink/70"
+              className="text-xl text-ink/60 mb-16 max-w-md leading-relaxed"
             >
-              Ready to elevate your game's visual identity? 
-              Whether you're an indie studio or an established publisher, 
-              I'm here to help bring your vision to life.
+              Ready to bring your game vision to life? I'm always open to new projects, collaborations, or just a friendly chat about game art.
             </motion.p>
 
-            <div className="space-y-8">
+            <div className="space-y-10">
               {[
-                { 
-                  icon: <Mail className="w-8 h-8" />, 
-                  label: "Email", 
-                  value: "khudaivishal@gmail.com",
-                  href: "https://mail.google.com/mail/?view=cm&fs=1&to=khudaivishal@gmail.com"
-                },
-                { 
-                  icon: <Linkedin className="w-8 h-8" />, 
-                  label: "LinkedIn", 
-                  value: "vishal-khudai",
-                  href: "https://www.linkedin.com/in/vishal-khudai/"
-                },
-                { 
-                  icon: <Phone className="w-8 h-8" />, 
-                  label: "Phone", 
-                  value: "+91 7874120249",
-                  href: "tel:+917874120249"
-                },
-                { 
-                  icon: <MapPin className="w-8 h-8" />, 
-                  label: "Location", 
-                  value: "Rajkot, Gujarat, India",
-                  href: "https://www.google.com/maps/search/?api=1&query=Rajkot,+Gujarat,+India"
-                },
+                { icon: <Mail className="w-6 h-6" />, label: "EMAIL", value: "khudaivishal@gmail.com", href: "mailto:khudaivishal@gmail.com" },
+                { icon: <Linkedin className="w-6 h-6" />, label: "LINKEDIN", value: "vishal-khudai", href: "https://www.linkedin.com/in/vishal-khudai/" },
+                { icon: <Send className="w-6 h-6" />, label: "PHONE", value: "+91 7874120249", href: "tel:+917874120249" },
+                { icon: <Target className="w-6 h-6" />, label: "LOCATION", value: "Rajkot, Gujarat, India", href: "https://www.google.com/maps/search/?api=1&query=Rajkot,+Gujarat,+India" },
               ].map((item, i) => (
-                <motion.div
+                <motion.a
                   key={item.label}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
                   className="flex items-center gap-6 group"
                 >
-                  {item.href ? (
-                    <a 
-                      href={item.href} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="flex items-center gap-6 w-full"
-                    >
-                      <div className="w-16 h-16 flex items-center justify-center transition-all shrink-0 rounded-2xl glass text-accent group-hover:text-white group-hover:border-accent group-hover:shadow-[0_0_15px_rgba(250,204,21,0.2)] border-accent/30">
-                        {item.icon}
-                      </div>
-                      <div>
-                        <div className="text-xs uppercase tracking-widest font-black mb-1 text-accent-light">{item.label}</div>
-                        <div className="text-xl font-black transition-colors font-display tracking-wider italic text-white group-hover:text-accent">{item.value}</div>
-                      </div>
-                    </a>
-                  ) : (
-                    <>
-                      <div className="w-16 h-16 flex items-center justify-center transition-all shrink-0 rounded-2xl glass text-accent group-hover:text-white group-hover:border-accent group-hover:shadow-[0_0_15px_rgba(250,204,21,0.2)] border-accent/30">
-                        {item.icon}
-                      </div>
-                      <div>
-                        <div className="text-xs uppercase tracking-widest font-black mb-1 text-accent-light">{item.label}</div>
-                        <div className="text-xl font-black transition-colors font-display tracking-wider italic text-white group-hover:text-accent">{item.value}</div>
-                      </div>
-                    </>
-                  )}
-                </motion.div>
+                  <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-black transition-all shadow-lg">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <div className="text-[10px] font-black uppercase tracking-[0.2em] text-accent mb-1">{item.label}</div>
+                    <div className="text-xl font-display font-bold text-white group-hover:text-accent transition-colors">{item.value}</div>
+                  </div>
+                </motion.a>
               ))}
             </div>
           </div>
 
           {/* Right: Contact Form */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="p-12 relative shadow-[0_20px_40px_rgba(0,0,0,0.2)] transition-all overflow-hidden rounded-2xl glass border-accent/20"
+            className="p-12 rounded-[2.5rem] bg-white/5 border border-white/10 backdrop-blur-xl shadow-2xl"
           >
             <AnimatePresence mode="wait">
               {!isSubmitted ? (
@@ -180,84 +129,66 @@ export function Contact() {
                   onSubmit={handleSubmit}
                   className="space-y-10"
                 >
-                  <div className="relative group">
+                  <div className="space-y-4">
+                    <label className="text-[10px] font-black uppercase tracking-[0.2em] text-ink/70 ml-1">Your Name</label>
                     <input
                       type="text"
-                      id="name"
+                      name="name"
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full bg-transparent border-b-[5px] py-5 focus:outline-none transition-colors peer text-2xl font-black border-white/10 text-white focus:border-accent"
-                      placeholder=" "
+                      placeholder="John Doe"
+                      className="w-full bg-transparent border-b border-white/10 py-4 focus:border-accent focus:outline-none transition-all text-white placeholder:text-ink/10 text-lg"
                     />
-                    <label
-                      htmlFor="name"
-                      className="absolute left-0 top-5 transition-all pointer-events-none peer-focus:-top-6 peer-focus:text-sm peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-sm text-ink/40 peer-focus:text-accent"
-                    >
-                      Your Name
-                    </label>
                   </div>
-
-                  <div className="relative group">
+                  <div className="space-y-4">
+                    <label className="text-[10px] font-black uppercase tracking-[0.2em] text-ink/70 ml-1">Studio / Company</label>
                     <input
                       type="text"
-                      id="studio"
+                      name="studio"
                       value={formData.studio}
                       onChange={(e) => setFormData({ ...formData, studio: e.target.value })}
-                      className="w-full bg-transparent border-b-[5px] py-5 focus:outline-none transition-colors peer text-2xl font-black border-white/10 text-white focus:border-accent"
-                      placeholder=" "
+                      placeholder="Studio / Company"
+                      className="w-full bg-transparent border-b border-white/10 py-4 focus:border-accent focus:outline-none transition-all text-white placeholder:text-ink/10 text-lg"
                     />
-                    <label
-                      htmlFor="studio"
-                      className="absolute left-0 top-5 transition-all pointer-events-none peer-focus:-top-6 peer-focus:text-sm peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-sm text-ink/40 peer-focus:text-accent"
-                    >
-                      Studio / Company
-                    </label>
                   </div>
-
-                  <div className="relative group">
+                  <div className="space-y-4">
+                    <label className="text-[10px] font-black uppercase tracking-[0.2em] text-ink/70 ml-1">Email Address</label>
                     <input
                       type="email"
-                      id="email"
+                      name="email"
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full bg-transparent border-b-[5px] py-5 focus:outline-none transition-colors peer text-2xl font-black border-white/10 text-white focus:border-accent"
-                      placeholder=" "
+                      placeholder="Email Address"
+                      className="w-full bg-transparent border-b border-white/10 py-4 focus:border-accent focus:outline-none transition-all text-white placeholder:text-ink/10 text-lg"
                     />
-                    <label
-                      htmlFor="email"
-                      className="absolute left-0 top-5 transition-all pointer-events-none peer-focus:-top-6 peer-focus:text-sm peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-sm text-ink/40 peer-focus:text-accent"
-                    >
-                      Email Address
-                    </label>
                   </div>
-
-                  <div className="relative group">
+                  <div className="space-y-4">
+                    <label className="text-[10px] font-black uppercase tracking-[0.2em] text-ink/70 ml-1">Project Details</label>
                     <textarea
-                      id="details"
+                      name="message"
                       required
                       rows={4}
                       value={formData.details}
                       onChange={(e) => setFormData({ ...formData, details: e.target.value })}
-                      className="w-full bg-transparent border-b-[5px] py-5 focus:outline-none transition-colors peer resize-none text-2xl font-black border-white/10 text-white focus:border-accent"
-                      placeholder=" "
+                      placeholder="Project Details"
+                      className="w-full bg-transparent border-b border-white/10 py-4 focus:border-accent focus:outline-none transition-all text-white placeholder:text-ink/10 text-lg resize-none"
                     />
-                    <label
-                      htmlFor="details"
-                      className="absolute left-0 top-5 transition-all pointer-events-none peer-focus:-top-6 peer-focus:text-sm peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-sm text-ink/40 peer-focus:text-accent"
-                    >
-                      Project Details
-                    </label>
                   </div>
-
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-8 rounded-[2rem] font-black text-3xl transition-all shadow-[0_15px_30px_rgba(0,0,0,0.3)] flex items-center justify-center gap-4 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100 uppercase tracking-widest relative overflow-hidden bg-accent hover:bg-white text-black hover:scale-[1.02] active:scale-[0.98]"
+                    className="w-full py-6 bg-accent hover:bg-white text-black rounded-2xl font-black text-sm uppercase tracking-[0.2em] transition-all flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed group shadow-2xl shadow-accent/20"
                   >
-                    {isSubmitting ? "Sending..." : "Send Message"}
-                    {!isSubmitting && <Send className="w-10 h-10" />}
+                    {isSubmitting ? (
+                      <div className="w-6 h-6 border-2 border-black border-t-transparent rounded-full animate-spin" />
+                    ) : (
+                      <>
+                        SEND MESSAGE
+                        <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                      </>
+                    )}
                   </button>
                 </motion.form>
               ) : (
@@ -265,16 +196,19 @@ export function Contact() {
                   key="success"
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="flex flex-col items-center justify-center text-center py-20"
+                  className="text-center py-20"
                 >
-                  <div className="w-24 h-24 rounded-full flex items-center justify-center mb-8 shadow-lg bg-accent shadow-accent/25">
-                    <CheckCircle className="w-12 h-12 text-bg" />
+                  <div className="w-20 h-20 bg-accent rounded-full flex items-center justify-center mx-auto mb-8">
+                    <Send className="w-10 h-10 text-black" />
                   </div>
-                  <h3 className="text-4xl font-black mb-4 italic text-white">Message Sent!</h3>
-                  <p className="text-xl text-ink/70">
-                    Thank you for reaching out. <br />
-                    I'll get back to you within 24 hours.
-                  </p>
+                  <h3 className="text-3xl font-display font-black text-white mb-4">MESSAGE SENT!</h3>
+                  <p className="text-ink/60 mb-10">I'll get back to you as soon as possible.</p>
+                  <button
+                    onClick={() => setIsSubmitted(false)}
+                    className="text-accent font-bold uppercase tracking-widest hover:text-white transition-colors"
+                  >
+                    Send another message
+                  </button>
                 </motion.div>
               )}
             </AnimatePresence>

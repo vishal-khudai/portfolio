@@ -45,14 +45,14 @@ export function ProjectGallery() {
   };
 
   return (
-    <section id="projects" className="py-24 px-6 bg-bg">
+    <section id="projects" className="py-24 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex items-center justify-center gap-2 text-accent font-bold uppercase tracking-widest text-sm mb-4 font-mono"
+            className="flex items-center justify-center gap-2 text-accent text-xs font-bold uppercase tracking-[0.2em] mb-4"
           >
             <Sparkles className="w-4 h-4" />
             <span>Game Art Portfolio</span>
@@ -61,9 +61,9 @@ export function ProjectGallery() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-8"
+            className="text-5xl md:text-7xl font-display font-black leading-tight mb-12"
           >
-            Featured <span className="text-gradient">Work</span>
+            Featured <span className="text-accent">Work</span>
           </motion.h2>
           
           {/* Filters */}
@@ -73,10 +73,10 @@ export function ProjectGallery() {
                 key={category}
                 onClick={() => setActiveCategory(category)}
                 className={cn(
-                  "px-6 py-2 rounded-full text-sm font-semibold transition-all border",
+                  "px-6 py-2 rounded-full text-xs font-bold transition-all border uppercase tracking-widest",
                   activeCategory === category
-                    ? "bg-accent border-accent text-bg shadow-[0_0_15px_rgba(250,204,21,0.3)]"
-                    : "bg-transparent border-white/10 text-ink/70 hover:border-white/30 hover:text-white"
+                    ? "bg-accent border-accent text-black shadow-[0_0_20px_rgba(250,204,21,0.2)]"
+                    : "bg-transparent border-white/10 text-ink/40 hover:border-white/30 hover:text-white"
                 )}
               >
                 {category}

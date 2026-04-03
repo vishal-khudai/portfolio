@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { cn } from "../lib/utils";
 import { X } from "lucide-react";
 
-const ART_CATEGORIES = ["All", "Assets", "Map", "UI"] as const;
+const ART_CATEGORIES = ["All", "Assets", "Map"] as const;
 
 const ARTWORKS = [
   // Assets
@@ -57,9 +57,6 @@ const ARTWORKS = [
   { id: 65, category: "Map", src: "https://lh3.googleusercontent.com/d/1OlWJrGUvYzZ05tsekxSo7U555cmTLqVV" },
   { id: 66, category: "Map", src: "https://lh3.googleusercontent.com/d/1kCnM1m2ELdHCnLhIZgNVWrQUXNQfUT5U" },
   { id: 67, category: "Map", src: "https://lh3.googleusercontent.com/d/1Mo-IFlF5d6595trdXvm0PNi0ZfsBGaqJ" },
-  
-  // UI
-  { id: 68, category: "UI", src: "https://lh3.googleusercontent.com/d/1vDniVoZc_Isy5Baf4pn94k8XQClpNe2K28IWZyjJjuuEy-QfA5d8djuTwxAI_J57k7fmjele4mKZo4XeP_ilXg" },
 ];
 
 export function Gallery() {
@@ -83,7 +80,7 @@ export function Gallery() {
   );
 
   return (
-    <section id="gallery" className="py-24 px-6 bg-bg relative overflow-hidden">
+    <section id="gallery" className="py-24 px-6 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -92,7 +89,7 @@ export function Gallery() {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="font-display text-5xl md:text-7xl font-black mb-6">
             Artwork <span className="text-accent">Gallery</span>
           </h2>
           <p className="text-ink/60 max-w-2xl mx-auto text-lg mb-12">
@@ -106,10 +103,10 @@ export function Gallery() {
                 key={category}
                 onClick={() => setActiveCategory(category)}
                 className={cn(
-                  "px-6 py-2 rounded-full text-sm font-semibold transition-all border",
+                  "px-6 py-2 rounded-full text-xs font-bold transition-all border uppercase tracking-widest",
                   activeCategory === category
-                    ? "bg-accent border-accent text-bg shadow-[0_0_15px_rgba(250,204,21,0.3)]"
-                    : "bg-transparent border-white/10 text-ink/70 hover:border-white/30 hover:text-white"
+                    ? "bg-accent border-accent text-black shadow-[0_0_20px_rgba(250,204,21,0.2)]"
+                    : "bg-transparent border-white/10 text-ink/40 hover:border-white/30 hover:text-white"
                 )}
               >
                 {category}
