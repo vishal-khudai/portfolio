@@ -6,4 +6,16 @@ import { defineConfig, loadEnv } from 'vite';
 export default defineConfig({
   base: '/portfolio/',
   plugins: [react(), tailwindcss()],
+  build: {
+    minify: 'esbuild', // Faster and very effective
+    cssMinify: true,
+    sourcemap: false, // Disable sourcemaps in production to hide source code
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'motion/react', 'lucide-react'],
+        },
+      },
+    },
+  },
 });

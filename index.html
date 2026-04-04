@@ -5,6 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>Vishal Khudai</title>
+    
+    <!-- Security Meta Tags -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://api.web3forms.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.googleusercontent.com https://*.google.com https://picsum.photos; connect-src 'self' https://api.web3forms.com;">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    
+    <!-- Light Anti-Inspection Deterrents (Optional) -->
+    <script>
+      // Deter right-click
+      document.addEventListener('contextmenu', (e) => {
+        if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+          e.preventDefault();
+        }
+      }, false);
+
+      // Deter common DevTools shortcuts
+      document.addEventListener('keydown', (e) => {
+        if (
+          e.key === 'F12' || 
+          (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) || 
+          (e.ctrlKey && e.key === 'U')
+        ) {
+          e.preventDefault();
+        }
+      }, false);
+    </script>
   </head>
   <body>
     <div id="root"></div>
