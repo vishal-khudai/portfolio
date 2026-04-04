@@ -12,6 +12,7 @@ export interface Tool {
   name: string;
   icon: string; // Lucide icon name or image URL
   color?: string;
+  description?: string;
 }
 
 export interface FeaturedWorld {

@@ -172,9 +172,9 @@ export const PROJECTS: Project[] = [
 ];
 
 export const TOOLS: Tool[] = [
-  { name: "Adobe Photoshop", icon: "Image", color: "#31A8FF" },
-  { name: "Blender 3D", icon: "Box", color: "#F5792A" },
-  { name: "Generative AI", icon: "Sparkles", color: "#FFD700" },
-  { name: "Procreate", icon: "Brush", color: "#E1306C" },
-  { name: "Affinity Designer", icon: "Spline", color: "#5F259F" },
+  { name: "Adobe Photoshop", icon: "https://lh3.googleusercontent.com/d/1zheZCoWFJyb_vqFOrLD_GLnjHiLbopvE", color: "#31A8FF" },
+  { name: "Blender 3D", icon: "https://lh3.googleusercontent.com/d/1v5eZGkJs1nWeYb24m6yQ-wcGdoai5o4N", color: "#F5792A" },
+  { name: "Generative AI", icon: "Sparkles", color: "#FFD700", description: "ChatGPT, Gemini AI, Mid-journey, Comfy-UI, etc." },
+  { name: "Procreate", icon: "https://lh3.googleusercontent.com/d/1nb2Y49WVolrpcZNzMqAsKFVKVxnADVtK", color: "#E1306C" },
+  { name: "Affinity Designer", icon: "https://lh3.googleusercontent.com/d/1qaEJrQG40zMeKaRAUgsx7cMIiCkEY8rr", color: "#5F259F" },
 ];

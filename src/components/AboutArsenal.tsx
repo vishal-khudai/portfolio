@@ -4,9 +4,20 @@ import { Sparkles, Box, Image as ImageIcon, Brush, Spline, Sparkles as SparklesI
 import { cn } from "../lib/utils";
 
 export function AboutArsenal() {
-  const getToolIcon = (iconName: string, color: string) => {
+  const getToolIcon = (icon: string, color: string) => {
+    if (icon.startsWith("http")) {
+      return (
+        <img 
+          src={icon} 
+          alt="Tool logo" 
+          className="w-12 h-12 object-contain" 
+          referrerPolicy="no-referrer"
+        />
+      );
+    }
+
     const props = { className: "w-8 h-8", style: { color } };
-    switch (iconName) {
+    switch (icon) {
       case "Box": return <Box {...props} />;
       case "Image": return <ImageIcon {...props} />;
       case "Brush": return <Brush {...props} />;
@@ -96,6 +107,9 @@ export function AboutArsenal() {
                   {getToolIcon(tool.icon, tool.color || "#fff")}
                 </div>
                 <div className="font-display font-bold text-xl text-white mb-1">{tool.name}</div>
+                {tool.description && (
+                  <div className="text-[10px] text-ink/60 mb-2 px-4">{tool.description}</div>
+                )}
                 <div className="text-[10px] font-bold uppercase tracking-widest text-accent">Expert</div>
               </motion.div>
             ))}
