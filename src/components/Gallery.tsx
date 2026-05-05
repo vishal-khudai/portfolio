@@ -58,7 +58,6 @@ const ARTWORKS = [
   { id: 67, category: "Map", src: "https://lh3.googleusercontent.com/d/1Mo-IFlF5d6595trdXvm0PNi0ZfsBGaqJ" },
 
   // UI
-  { id: 68, category: "UI", src: "https://lh3.googleusercontent.com/d/11OUVK_5NDHjlotydJcoZBGcqHXyIiXHN" },
   { id: 69, category: "UI", src: "https://lh3.googleusercontent.com/d/1_vQxVX7SNcqRVoPnKXYIdBG_aydPA0Y1" },
 ];
 
