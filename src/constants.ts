@@ -114,22 +114,6 @@ export const PROJECTS: Project[] = [
     link: "https://play.google.com/store/apps/details?id=com.threadcolor.blockjampuzzle",
   },
   {
-    id: "idle-cityscape",
-    title: "Idle Cityscape Tycoon",
-    category: "Idle & Tycoon",
-    image: "https://play-lh.googleusercontent.com/kw_SixxDOAIht083Ulp463-s4qvnf8nQmCf6cdus1RquZ1IRIecvl936HJYkMsh3Ug",
-    tools: ["Photoshop", "Generative AI"],
-    link: "https://play.google.com/store/search?q=Idle+Cityscape+Tycoon&c=apps",
-  },
-  {
-    id: "pinball-smash",
-    title: "Pinball - Smash & Hit",
-    category: "Arcade",
-    image: "https://play-lh.googleusercontent.com/bNPvfkhfDOIV7dG3d19sJvv04_UUcF7EKnCLLsYAKA3H0NNFxhX5hM4yn3_5lRwSvtY",
-    tools: ["Blender", "Photoshop"],
-    link: "https://play-lh.googleusercontent.com/bNPvfkhfDOIV7dG3d19sJvv04_UUcF7EKnCLLsYAKA3H0NNFxhX5hM4yn3_5lRwSvtY",
-  },
-  {
     id: "play-word",
     title: "Play Word!",
     category: "Puzzle & Sort",

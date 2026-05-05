@@ -20,7 +20,7 @@ export function ProjectGallery() {
       return newArray;
     };
     
-    const lastProjectIds = ["pinball-smash", "idle-cityscape"];
+    const lastProjectIds: string[] = [];
     const regularProjects = PROJECTS.filter(p => !lastProjectIds.includes(p.id));
     const lastProjects = PROJECTS.filter(p => lastProjectIds.includes(p.id));
     
