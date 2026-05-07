@@ -58,8 +58,41 @@ const ARTWORKS = [
   { id: 67, category: "Map", src: "https://lh3.googleusercontent.com/d/1Mo-IFlF5d6595trdXvm0PNi0ZfsBGaqJ" },
 
   // UI
+  { id: 68, category: "UI", src: "https://lh3.googleusercontent.com/d/11OUVK_5NDHjlotydJcoZBGcqHXyIiXHN" },
   { id: 69, category: "UI", src: "https://lh3.googleusercontent.com/d/1_vQxVX7SNcqRVoPnKXYIdBG_aydPA0Y1" },
 ];
+
+function GalleryImage({ art, index, onClick }: { art: any; index: number; onClick: () => void }) {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  return (
+    <motion.div
+      layout
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.9 }}
+      transition={{ duration: 0.5, delay: (index % 6) * 0.1 }}
+      className="break-inside-avoid relative group rounded-2xl overflow-hidden bg-white/5 cursor-pointer min-h-[200px]"
+      onClick={onClick}
+    >
+      {!isLoaded && (
+        <div className="absolute inset-0 bg-white/10 animate-pulse" />
+      )}
+      <img
+        src={art.src}
+        alt={`Artwork ${art.id}`}
+        onLoad={() => setIsLoaded(true)}
+        className={cn(
+          "w-full h-auto object-cover select-none pointer-events-none transition-all duration-700",
+          isLoaded ? "opacity-100 group-hover:scale-110" : "opacity-0 scale-95"
+        )}
+        referrerPolicy="no-referrer"
+        draggable={false}
+      />
+      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+    </motion.div>
+  );
+}
 
 export function Gallery() {
   const [activeCategory, setActiveCategory] = useState<typeof ART_CATEGORIES[number]>("All");
@@ -123,26 +156,12 @@ export function Gallery() {
         >
           <AnimatePresence mode="popLayout">
             {filteredArt.map((art, index) => (
-              <motion.div
+              <GalleryImage
                 key={art.id}
-                layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.5, delay: (index % 6) * 0.1 }}
-                className="break-inside-avoid relative group rounded-2xl overflow-hidden bg-white/5 cursor-pointer"
+                art={art}
+                index={index}
                 onClick={() => setSelectedImage(art.src)}
-              >
-                <img
-                  src={art.src}
-                  alt={`Artwork ${art.id}`}
-                  className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110 select-none pointer-events-none"
-                  loading="lazy"
-                  referrerPolicy="no-referrer"
-                  draggable={false}
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
-              </motion.div>
+              />
             ))}
           </AnimatePresence>
         </motion.div>
